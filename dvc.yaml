@@ -1,0 +1,9 @@
+stages:
+  baseline_model:
+    cmd: python baseline.py
+    deps:
+    - baseline.py
+    - data/iris.csv
+    metrics:
+    - metrics.txt:
+        cache: false

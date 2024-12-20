@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  baseline_model:
+    cmd: python baseline.py
+    deps:
+    - path: baseline.py
+      hash: md5
+      md5: e34b435e75d4cebbbaf6849f20f34987
+      size: 1275
+    - path: data/iris.csv
+      hash: md5
+      md5: 21d441a28bce4417276097df955afc50
+      size: 2928
+    outs:
+    - path: metrics.txt
+      hash: md5
+      md5: 6e94194c86fe8404136ba6399b419c16
+      size: 113

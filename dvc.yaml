@@ -2,8 +2,26 @@ stages:
   baseline_model:
     cmd: python baseline.py
     deps:
-    - baseline.py
-    - data/iris.csv
+      - baseline.py
+      - data/iris.csv
     metrics:
-    - metrics.txt:
-        cache: false
+      - metrics.json:
+          cache: false
+
+  experiment_1:
+    cmd: python experiment.py --n_estimators 50 --max_depth 10 --output_path metrics_exp1.json
+    deps:
+      - experiment.py
+      - data/iris.csv
+    metrics:
+      - metrics_exp1.json:
+          cache: false
+
+  experiment_2:
+    cmd: python experiment.py --n_estimators 100 --max_depth 15 --output_path metrics_exp2.json
+    deps:
+      - experiment.py
+      - data/iris.csv
+    metrics:
+      - metrics_exp2.json:
+          cache: false

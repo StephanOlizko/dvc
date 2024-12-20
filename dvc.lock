@@ -5,14 +5,46 @@ stages:
     deps:
     - path: baseline.py
       hash: md5
-      md5: 7fa6897cb16d50b97246279723f31698
-      size: 1275
+      md5: 4dd33485b1f5617851a3426bb2596d83
+      size: 1342
     - path: data/iris.csv
       hash: md5
       md5: 21d441a28bce4417276097df955afc50
       size: 2928
     outs:
-    - path: metrics.txt
+    - path: metrics.json
       hash: md5
-      md5: fceca0e5d56a445d30e0521ef26e2f24
-      size: 113
+      md5: a28012a76ba6434b026204cee96c36a1
+      size: 144
+  experiment_1:
+    cmd: python experiment.py --n_estimators 50 --max_depth 10 --output_path metrics_exp1.json
+    deps:
+    - path: data/iris.csv
+      hash: md5
+      md5: 21d441a28bce4417276097df955afc50
+      size: 2928
+    - path: experiment.py
+      hash: md5
+      md5: dfd97f81aea9cc8997f378c2f98c655a
+      size: 1938
+    outs:
+    - path: metrics_exp1.json
+      hash: md5
+      md5: 81b94ad81db51d6975aa996f324d3789
+      size: 84
+  experiment_2:
+    cmd: python experiment.py --n_estimators 100 --max_depth 15 --output_path metrics_exp2.json
+    deps:
+    - path: data/iris.csv
+      hash: md5
+      md5: 21d441a28bce4417276097df955afc50
+      size: 2928
+    - path: experiment.py
+      hash: md5
+      md5: dfd97f81aea9cc8997f378c2f98c655a
+      size: 1938
+    outs:
+    - path: metrics_exp2.json
+      hash: md5
+      md5: 81b94ad81db51d6975aa996f324d3789
+      size: 84

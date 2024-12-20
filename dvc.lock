@@ -1,21 +1,5 @@
 schema: '2.0'
 stages:
-  baseline_model:
-    cmd: python baseline.py
-    deps:
-    - path: baseline.py
-      hash: md5
-      md5: 4dd33485b1f5617851a3426bb2596d83
-      size: 1342
-    - path: data/iris.csv
-      hash: md5
-      md5: 21d441a28bce4417276097df955afc50
-      size: 2928
-    outs:
-    - path: metrics.json
-      hash: md5
-      md5: a28012a76ba6434b026204cee96c36a1
-      size: 144
   experiment_1:
     cmd: python experiment.py --n_estimators 50 --max_depth 10 --output_path metrics_exp1.json
     deps:

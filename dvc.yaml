@@ -5,29 +5,27 @@ stages:
       - baseline.py
       - data/iris.csv
     metrics:
-      - metrics.json:
-          cache: false
-    plots:
       - metrics.json
 
   experiment_1:
     cmd: python experiment.py --n_estimators 50 --max_depth 10 --output_path metrics_exp1.json
     deps:
-      - experiment.py
-      - data/iris.csv
+    - experiment.py
+    - data/iris.csv
     metrics:
-      - metrics_exp1.json:
-          cache: false
+    - metrics_exp1.json:
+        cache: false
     plots:
-      - metrics_exp1.json
+    - metrics_exp1.json
 
   experiment_2:
     cmd: python experiment.py --n_estimators 100 --max_depth 15 --output_path metrics_exp2.json
     deps:
-      - experiment.py
-      - data/iris.csv
+    - experiment.py
+    - data/iris.csv
     metrics:
-      - metrics_exp2.json:
-          cache: false
+    - metrics_exp2.json:
+        cache: false
     plots:
-      - metrics_exp2.json
+    - metrics_exp2.json
+
